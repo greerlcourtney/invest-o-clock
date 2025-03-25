@@ -67,5 +67,12 @@ jobs:
         run: npm run build
         env:
           NODE_ENV: production
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          cname: your-custom-domain.com  # Replace with your actual domain
+          force_orphan: true
       - name: Deploy to Production
         run: echo "Deploying to production environment"
