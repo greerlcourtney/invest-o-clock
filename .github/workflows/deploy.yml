@@ -75,7 +75,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
           publish_dir: ./dist
-
           cname: www.infiniti-minds.com 
           force_orphan: true
       - name: Deploy to Production
