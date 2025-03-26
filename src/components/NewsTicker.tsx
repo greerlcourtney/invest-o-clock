@@ -1,11 +1,9 @@
 import React from "react";
 
 const newsItems = [
-  "OpenAI raises $100M in Series D funding",
-  "Anthropic secures $750M investment",
-  "New AI chip startup emerges with $50M seed round",
-  "DeepMind announces breakthrough in quantum AI",
-  "AI infrastructure company closes $200M round",
+  "Former Cruise CEO Vogt's robotics startup valued at $2 billion in new funding",
+  "Tech funding news for today, March 24, 2025",
+  "25 Fastest Growing Companies & Startups (2025)",
 ];
 
 export const NewsTicker = () => {
