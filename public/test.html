@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog Table Test</title>
+  <script>
+    async function loadData() {
+      const output = document.getElementById('output');
+
+      try {
+        const res = await fetch('/data');
+        const rows = await res.json();
+
+        if (res.status !== 200) {
+          throw new Error(rows.error || 'Unknown error');
+        }
+
+        if (rows.length === 0) {
+          output.innerText = 'No data found in blog table.';
+          return;
+        }
+
+        const table = document.createElement('table');
+
+        const header = table.insertRow();
+        Object.keys(rows[0]).forEach(col => {
+          const cell = header.insertCell();
+          cell.innerText = col;
+        });
+
+        const count = document.createElement('p');
+        count.innerText = `Total rows: ${rows.length}`;
+        output.appendChild(count);
+
+        rows.forEach(row => {
+          const tr = table.insertRow();
+          Object.values(row).forEach(val => {
+            const td = tr.insertCell();
+            td.innerText = val;
+          });
+        });
+
+        output.appendChild(table);
+      } catch (err) {
+        output.innerText = 'Error: ' + err.message;
+      }
+    }
+  </script>
+</head>
+<body onload="loadData()">
+  <h1>Blog Table Data</h1>
+  <div id="output"></div>
+</body>
+</html>
