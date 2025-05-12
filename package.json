@@ -12,6 +12,7 @@
     "postbuild": "echo www.infiniti-minds.com > dist/CNAME"
   },
   "dependencies": {
+    "@google-cloud/firestore": "^7.11.0",
     "@hookform/resolvers": "^3.9.0",
     "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-alert-dialog": "^1.1.1",
@@ -46,9 +47,12 @@
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
     "date-fns": "^3.6.0",
+    "dotenv": "^16.5.0",
     "embla-carousel-react": "^8.3.0",
+    "express": "^5.1.0",
     "input-otp": "^1.2.4",
     "lucide-react": "^0.462.0",
+    "mysql2": "^3.14.1",
     "next-themes": "^0.3.0",
     "react": "^18.2.0",
     "react-day-picker": "^8.10.1",
@@ -83,5 +87,17 @@
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.11",
     "vite-tsconfig-paths": "^5.1.4"
+  },
+  "description": "## Project info Dive into the world of startup investing with this blog. Discover valuable insights, stay ahead of the curve, and build a strong foundation for your investment journey. This blog is your go-to source for bite-sized investment data.",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greerlcourtney/invest-o-clock.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/greerlcourtney/invest-o-clock/issues"
   }
 }
