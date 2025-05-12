@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/development'
     environment: development
-    
+
     steps:
       - uses: actions/checkout@v4
       - name: Setup Node.js
@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/staging'
     environment: staging
-    
+
     steps:
       - uses: actions/checkout@v4
       - name: Setup Node.js
@@ -54,7 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     environment: production
-    
+
     steps:
       - uses: actions/checkout@v4
       - name: Setup Node.js
@@ -68,13 +68,13 @@ jobs:
         env:
           NODE_ENV: production
       - name: List build directory
-        run: ls -la dist  # or 'ls -la build' depending on your build directory
+        run: ls -la dist  # or change to 'build' if that’s your output dir
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          cname: www.infiniti-minds.com 
+          cname: www.infiniti-minds.com
           force_orphan: true
       - name: Deploy to Production
         run: echo "Deploying to production environment"
